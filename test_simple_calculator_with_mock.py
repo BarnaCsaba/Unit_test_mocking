@@ -14,13 +14,19 @@ def test_add_with_mock_history_service():
 
     mock_history.save_operation.assert_called_once()
     mock_history.save_operation.assert_called_with("add", 5, 3, 8)
+
+
 def test_multiply_with_multiple_mocks():
     mock_history = Mock()
     mock_logger = Mock()
 
+    
+
     mock_history.save_operation.assert_called_once()
     mock_history.save_operation.assert_called_with("add", 5, 3, 8)
-    mock_logger.save_operation.assert_called_once()
-    mock_logger.save_operation.assert_called_with("add", 5, 3, 8)
+    mock_logger.log_operation.assert_called_once()
+    mock_logger.log_operation.assert_called_with("add", 5, 3, 8)
+
+
 def test_get_history_count_with_mock():
     pass
